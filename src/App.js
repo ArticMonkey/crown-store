@@ -13,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
+        kawai nee
       </Switch>
     </div>
   );
