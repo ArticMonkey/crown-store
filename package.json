@@ -2,7 +2,10 @@
   "name": "crown-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aurionlab.github.io/crown-store",
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.13.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
