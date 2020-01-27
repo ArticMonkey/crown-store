@@ -21,9 +21,9 @@ import {
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
     const userRef = yield call(
-        createUserProfileDocument,
-        userAuth,
-        additionalData
+      createUserProfileDocument,
+      userAuth,
+      additionalData
     );
     const userSnapshot = yield userRef.get();
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
