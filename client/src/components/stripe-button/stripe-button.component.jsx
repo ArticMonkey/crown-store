@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_b7a3hFL5nC3qlBCZ6bQACpez00gyMMP52H';
+  const publishableKey = 'pk_test_CXNpAZTLONbxPQROGilhYu7P007riEqrwa';
 
   const onToken = token => {
     axios({
@@ -15,30 +15,30 @@ const StripeCheckoutButton = ({ price }) => {
         token: token
       }
     })
-        .then(response => {
-          alert('succesful payment');
-        })
-        .catch(error => {
-          console.log('Payment Error: ', error);
-          alert(
-              'There was an issue with your payment! Please make sure you use the provided credit card.'
-          );
-        });
+      .then(response => {
+        alert('succesful payment');
+      })
+      .catch(error => {
+        console.log('Payment Error: ', error);
+        alert(
+          'There was an issue with your payment! Please make sure you use the provided credit card.'
+        );
+      });
   };
 
   return (
-      <StripeCheckout
-          label='Pay Now'
-          name='CRWN Clothing Ltd.'
-          billingAddress
-          shippingAddress
-          image='https://svgshare.com/i/CUz.svg'
-          description={`Your total is $${price}`}
-          amount={priceForStripe}
-          panelLabel='Pay Now'
-          token={onToken}
-          stripeKey={publishableKey}
-      />
+    <StripeCheckout
+      label='Pay Now'
+      name='CRWN Clothing Ltd.'
+      billingAddress
+      shippingAddress
+      image='https://svgshare.com/i/CUz.svg'
+      description={`Your total is $${price}`}
+      amount={priceForStripe}
+      panelLabel='Pay Now'
+      token={onToken}
+      stripeKey={publishableKey}
+    />
   );
 };
 
